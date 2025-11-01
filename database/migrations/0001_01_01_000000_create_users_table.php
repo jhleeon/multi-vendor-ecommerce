@@ -18,8 +18,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('name');
             $table->string('user_name')->nullable();
-            $table->string('phone');
-            $table->text('address');
+            $table->string('photo')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
             $table->enum('role', ['admin', 'vendor', 'user'])->default('user');
             $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->rememberToken();
@@ -43,7 +44,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations.  
      */
     public function down(): void
     {
